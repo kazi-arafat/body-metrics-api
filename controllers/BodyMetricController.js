@@ -12,10 +12,11 @@ exports.getBodyMetrics = async function (req, res) {
 
 exports.addBodyMetric = async function (req, res) {
   const newBodyMetric = BodyMetric(req.body);
-  console.log(req.body);
+  console.log(`New Body metric add ${req.body}`);
   try {
     await newBodyMetric.save();
-    res.status(201).send("Successfully added to database!");
+    //res.status(201).send("Successfully added to database!");
+	res.status(201).json(newBodyMetric);
   } catch (error) {
     console.error(error.message);
     res.status(512).send("Not added! See error logs.");

@@ -11,14 +11,16 @@ require("dotenv").config();
 // initialize app using express
 const app = express();
 
+
 // declare and use middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
+
 // declare all the route
 app.use("/body-metrics", BodyMetricsRoutes);
-app.use("/register", AuthenticationRoutes);
+app.use("/auth", AuthenticationRoutes);
 
 // database connectivity and start app server
 const PORT = process.env.PORT;

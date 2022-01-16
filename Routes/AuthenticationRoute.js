@@ -3,6 +3,6 @@ const BodyMetricsController = require("../controllers/AuthenticationController.j
 
 const router = express.Router();
 
-router.post("/", BodyMetricsController.createAppUser);
+router.post("/register", BodyMetricsController.createAppUser);
 
 module.exports = router;
