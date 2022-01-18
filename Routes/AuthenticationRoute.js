@@ -1,8 +1,9 @@
 const express = require("express");
-const BodyMetricsController = require("../controllers/AuthenticationController.js");
+const AuthenticationController = require("../controllers/AuthenticationController.js");
 
 const router = express.Router();
 
-router.post("/register", BodyMetricsController.createAppUser);
+router.post("/register", AuthenticationController.createAppUser);
+router.post("/login", AuthenticationController.login);
 
 module.exports = router;
